@@ -1,4 +1,5 @@
 <html dir="ltr" lang="zh-CN">
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -18,8 +19,35 @@
     <script src="./times.js"></script>
     <script src="./get.js"></script>
     <title> Recorded Love</title>
+    <script>
+        document.onkeydown = function() {
+            if (window.event && window.event.keyCode == 123) {
+                /*alert("看你🐎的代码！");*/
+                event.keyCode = 0;
+                event.returnValue = false;
+            }
+            if (window.event && window.event.keyCode == 13) {
+                window.event.keyCode = 505;
+            }
+            if (window.event && window.event.keyCode == 8) {
+                alert(str + "\n请使用Del键进行字符的删除操作！");
+                window.event.returnValue = false;
+            }
+        }
+        console.log('%c 当你能看见这个的时候，你大抵不是个脚本小子了吧....', 'color:#f00;font-size:15px;font-family:黑体;border-radius:5px;')
+        console.log('%c 作者：ITJoker Version：1.0.1', 'color:#0091e4;background:#ffe;font-size:15px;font-family:黑体;border-radius:5px;')
+        console.log('%cLOVE %cRecord%c ❤',
+            'color: #fff; background: #000; font-size: 60px;padding: 2px;border-radius:10px 0 0 10px;', 'color:#000;padding: 2px;background:#f90;font-size: 60px;border-radius:0 10px 10px 0;', 'color:red;font-size: 60px;');
+        console.log('%c 这里表示你已经看到了题目🎉...👇', 'color:#0091e4;background:#eee;font-size:48px;font-family:黑体;border-radius:10px;')
+        console.log('%c 如果你要访问一个网站，浏览器首先做的事情是什么？', 'color:#0091e4;background:#eee;font-size:24px;font-family:黑体;border-radius:7px;')
+        console.log('%c If you want to visit a website, what is the first thing the browser does?', 'color:#0091e4;background:#eee;font-size:24px;font-family:黑体;border-radius:7px;')
+        console.log('%c Tips: You need some tools to solving this question.', 'color:#0091e4;background:#eee;font-size:24px;font-family:黑体;border-radius:7px;')
+    </script>
 </head>
+
 <body>
+    <!--看你妈了个逼🔪？-->
+    <!--简单的防看代码举措，虽然还想禁止更多的。但是没必要....拦一些脚本小子还是有必要的-->
     <main>
         <div id="main">
             <ul id="main-content">
@@ -29,13 +57,17 @@
                 <li class="content">
                     <div style="text-align: center;"><span id="hitokoto"></span>&nbsp;&nbsp;<i class="memory memory-heart throb"></i></div>
                 </li>
+                <li class="content">
+                    <div style="text-align: center;">本站有彩蛋🎉....算是明示了....详情自己找题目....找到可能有奖励🎁 Good Luck！</div>
+                </li>
             </ul>
         </div>
     </main>
     <footer>
         <div id="foot">
-            <p> All Rights Reserved ©<a href="//www.itjoker.cn">ITJoker</a><br><span class="shake shake-default">(●'◡'●)ﾉ<i class="memory memory-heart throb"></i></span> Recorded<span id="bulid_time"></span></p>
+            <p> All Rights Reserved ©<a href="//www.itjoker.cn">ITJoker</a><br><span class="shake shake-default">\(●'◡'●)ﾉ<i class="memory memory-heart throb"></i></span> Recorded<span id="bulid_time"></span></p>
         </div>
     </footer>
 </body>
+
 </html>
