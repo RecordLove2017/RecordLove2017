@@ -32,7 +32,7 @@
         var wordsArray = new Array(693);
         var Sort_wordsArray_en = new Array(693);
         var Sort_wordsArray_translate = new Array(693);
-        var Sort_wordsArray = new Array(693);
+        var dic = new Array(693);
         var num = 0;
         var paramObj = {
             httpUrl: 'https://love.itjoker.cn/Words/words.txt',
@@ -57,7 +57,7 @@
                 if(temp){
                     Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
                     Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
-                    Sort_wordsArray[i] = Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
+                    dic[Sort_wordsArray_en[i]] = Sort_wordsArray_translate[i];
                 }
             }
         }, function () {
@@ -65,8 +65,9 @@
         });
 
         function SortEvent() {
-            for (var i = 0; i < wordsArray.length; i++) {
-                document.getElementById(i.toString()).innerHTML = wordsArray[i];
+            dic.sort();
+            for (var i = 0; i < dic.length; i++) {
+                document.getElementById(i.toString()).innerHTML = dic[i];
             }
         }
         /*function Event() {
