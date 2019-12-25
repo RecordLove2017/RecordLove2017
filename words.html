@@ -15,20 +15,23 @@
     <script src="https://love.itjoker.cn/Words/http.js"></script>
     <title>CET4 高频单词</title>
 </head>
+
 <body>
     <script>
     </script>
     <header>
-        <p class="title">CET4 高频单词<br /><a href="http://love.itjoker.cn" class="copyright">Design Copyright By ITJoker ©</a></p>
+        <p class="title">CET4 高频单词<br /><a href="http://love.itjoker.cn" class="copyright">Design Copyright By ITJoker
+                ©</a></p>
     </header>
     <main>
-		<div class="ButtonList">
-			<div id="SortButton" class="button"><span>排序</span></div>
-			<div id="ReturnButton" class="button"><span>还原</span></div>
-		</div>
+
         <div id="main">
+            <div class="ButtonList">
+                <div id="SortButton" class="button"><span>排序</span></div>
+                <div id="ReturnButton" class="button"><span>还原</span></div>
+            </div>
             <div id="wordlist">
-			</div>
+            </div>
         </div>
     </main>
     <script>
@@ -41,7 +44,7 @@
             httpUrl: 'https://love.itjoker.cn/Words/words.txt',
             type: 'get',
         }
-        httpRequest(paramObj, function (response) {
+        httpRequest(paramObj, function(response) {
             var temp = '',
                 word = '';
             for (var i = 0; i < response.length; i++) {
@@ -54,32 +57,33 @@
                     temp = '';
                 }
             }
-            document.getElementById("wordlist").innerHTML = document.getElementById("wordlist").innerHTML+word;
+            document.getElementById("wordlist").innerHTML = document.getElementById("wordlist").innerHTML + word;
             for (var i = 0; i < wordsArray.length; i++) {
                 var temp = document.getElementById(i.toString()).innerHTML;
-                if(temp){
+                if (temp) {
                     Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
                     Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
                     dic[Sort_wordsArray_en[i]] = Sort_wordsArray_translate[i];
                 }
             }
-        }, function () {
+        }, function() {
             document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
         });
-		var SortButton = document.getElementById("SortButton");
-		var ReturnButton= document.getElementById("ReturnButton");
+        var SortButton = document.getElementById("SortButton");
+        var ReturnButton = document.getElementById("ReturnButton");
         SortButton.onclick = function SortEvent() {
             Sort_wordsArray_en.sort();
-            for(var i =0;i<Sort_wordsArray_en.length;i++) {
-				key = Sort_wordsArray_en[i];
-                document.getElementById(i.toString()).innerHTML = key+" "+dic[key];
+            for (var i = 0; i < Sort_wordsArray_en.length; i++) {
+                key = Sort_wordsArray_en[i];
+                document.getElementById(i.toString()).innerHTML = key + " " + dic[key];
             }
         }
-		ReturnButton.onclick = function ReturnEvent() {
-            for(var i =0;i<wordsArray.length;i++) {
+        ReturnButton.onclick = function ReturnEvent() {
+            for (var i = 0; i < wordsArray.length; i++) {
                 document.getElementById(i.toString()).innerHTML = wordsArray[i];
             }
         }
     </script>
 </body>
+
 </html>
