@@ -23,6 +23,7 @@
     </header>
     <main>
         <div id="main">
+            <div class="button"><span>Button</span></div>
             <div id="wordlist"></div>
         </div>
     </main>
@@ -66,7 +67,7 @@
             dic.sort();
             var i = 0;
             for (var key in dic) {
-                document.getElementById(i.toString()).innerHTML = dic[key];
+                document.getElementById(i.toString()).innerHTML = key+" "+dic[key];
                 i++;
             }
         }
