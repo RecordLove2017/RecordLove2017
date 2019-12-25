@@ -23,6 +23,7 @@
     </main>
 
     <script>
+        var wordsArray=new Array(693)
         var num = 0;
         var paramObj = {
             httpUrl: '/words.txt',
@@ -36,6 +37,7 @@
                     temp += response[i];
                 } else {
                     num += 1;
+                    wordsArray[num-1] = temp;
                     word += '<div id="' + num.toString() + '" class="word">' + temp + '</div>';
                     temp = '';
                 }
@@ -44,6 +46,7 @@
         }, function() {
             document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
         });
+        console.log(wordsArray.sort());
         /*function Event() {
             var random_num = Math.ceil(Math.random() * num + 1);
             var words = document.getElementById(random_num);
