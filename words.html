@@ -19,20 +19,18 @@
     <script>
     </script>
     <header>
-        <p class="title">CET4 高频单词<br /><a href="http://love.itjoker.cn" class="copyright">Design Copyright By ITJoker
-                ©</a></p>
+        <p class="title">CET4 高频单词<br /><a href="http://love.itjoker.cn" class="copyright">Design Copyright By ITJoker ©</a></p>
     </header>
     <main>
         <div id="main">
             <div id="wordlist"></div>
         </div>
-
     </main>
     <script>
         var wordsArray = new Array(693);
         var Sort_wordsArray_en = new Array(693);
         var Sort_wordsArray_translate = new Array(693);
-        var dic = new Array(693);
+        var dic = new Array();
         var num = 0;
         var paramObj = {
             httpUrl: 'https://love.itjoker.cn/Words/words.txt',
@@ -56,6 +54,7 @@
                 var temp = document.getElementById(i.toString()).innerHTML;
                 if(temp){
                     Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
+                    console.log(i.toString()+"： "+Sort_wordsArray_en[i]);
                     Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
                     dic[Sort_wordsArray_en[i]] = Sort_wordsArray_translate[i];
                 }
