@@ -60,13 +60,10 @@
         var Sort_wordsArray_en = new Array(693);
         var Sort_wordsArray_translate = new Array(693);
         var Sort_wordsArray = new Array(693);
-        var temp_en = "";
-        var temp_translate = "";
         for(var i=0;i<Sort_wordsArray.length;i++){
-            temp_en = wordsArray[i].split(" ")[0];
-            Sort_wordsArray_translate[i] = wordsArray[i].split(" ")[2];
-            Sort_wordsArray_en[i];
-            Sort_wordsArray = Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
+            Sort_wordsArray_translate[i] = wordsArray[i].split(" ")[2].toring();
+            Sort_wordsArray_en[i] = wordsArray[i].split(" ")[0].toString()
+            Sort_wordsArray[i]Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
         }
         function SortEvent(){
             for(var i=0;i<wordsArray.length;i++){
