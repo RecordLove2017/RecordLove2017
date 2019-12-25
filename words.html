@@ -32,7 +32,7 @@
     </main>
 
     <script>
-        var wordsArray = new Array(693)
+        var wordsArray = new Array(693);
         var num = 0;
         var paramObj = {
             httpUrl: 'https://love.itjoker.cn/Words/words.txt',
@@ -59,10 +59,10 @@
         var Sort_wordsArray_translate = new Array(693);
         var Sort_wordsArray = new Array(693);
         for (var i = 0; i < Sort_wordsArray.length; i++) {
-            var temp = wordsArray[i].toString();
+            var temp = wordsArray[i];
             if(temp){
                 Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
-                Sort_wordsArray_translate[i] = temp.split(" ")[2].tostring();
+                Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
                 //Sort_wordsArray[i] = Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
             }
 
