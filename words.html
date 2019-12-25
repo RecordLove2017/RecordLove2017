@@ -54,7 +54,6 @@
                 var temp = document.getElementById(i.toString()).innerHTML;
                 if(temp){
                     Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
-                    console.log(i.toString()+"： "+Sort_wordsArray_en[i]);
                     Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
                     dic[Sort_wordsArray_en[i]] = Sort_wordsArray_translate[i];
                 }
@@ -65,17 +64,12 @@
 
         function SortEvent() {
             dic.sort();
-            for (var i = 0; i < dic.length; i++) {
-                document.getElementById(i.toString()).innerHTML = dic[i];
+            var i = 0;
+            for (var key in dic) {
+                document.getElementById(i.toString()).innerHTML = dic[key];
+                i++;
             }
         }
-        /*function Event() {
-            var random_num = Math.ceil(Math.random() * num + 1);
-            var words = document.getElementById(random_num);
-            console.log(random_num);
-            words.style.background = '#f00';
-        }
-        setInterval("Event()", 1000);*/
     </script>
 </body>
 </html>
