@@ -22,6 +22,15 @@ header {
     padding: 10px;
 }
 
+.copyright {
+    margin-top: 50px;
+    color: #fff;
+    text-align: center;
+    float: center;
+    margin: auto;
+    font-size: 18px;
+}
+
 .title {
     margin-top: 50px;
     color: #fff;
