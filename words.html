@@ -23,7 +23,8 @@
     </header>
     <main>
         <div id="main">
-            <div class="button"><span>Button</span></div>
+			<div id="SortButton" class="button"><span>排序</span></div>
+			<div id="ReturnButton" class="button"><span>还原</span></div>
             <div id="wordlist"></div>
         </div>
     </main>
@@ -62,13 +63,18 @@
         }, function () {
             document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
         });
-
-        function SortEvent() {
-            dic.sort();
-            var i = 0;
-            for (var key in dic) {
+		var SortButton = document.getElementById("SortButton");
+		var ReturnButton= document.getElementById("ReturnButton");
+        SortButton.onclick = function SortEvent() {
+            Sort_wordsArray_en.sort();
+            for(var i =0;i<Sort_wordsArray_en.length;i++) {
+				key = Sort_wordsArray_en[i];
                 document.getElementById(i.toString()).innerHTML = key+" "+dic[key];
-                i++;
+            }
+        }
+		ReturnButton.onclick = function ReturnEvent() {
+            for(var i =0;i<wordsArray.length;i++) {
+                document.getElementById(i.toString()).innerHTML = wordsArray[i];
             }
         }
     </script>
