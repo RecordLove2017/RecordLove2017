@@ -36,9 +36,9 @@
                 if (response[i] != '\n') {
                     temp += response[i];
                 } else {
-                    num += 1;
-                    wordsArray[num-1] = temp;
+                    wordsArray[num] = temp;
                     word += '<div id="' + num.toString() + '" class="word">' + temp + '</div>';
+                    num += 1;
                     temp = '';
                 }
             }
@@ -46,7 +46,13 @@
         }, function() {
             document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
         });
-        console.log(wordsArray.sort());
+        var sort_data = wordsArray.sort()
+        console.log(sort_data);
+        function SortEvent(){
+            for(var i=0;i<wordsArray.length;i++){
+                document.getElementById(i.toString()).innerHTML=wordsArray[i];
+            }
+        }
         /*function Event() {
             var random_num = Math.ceil(Math.random() * num + 1);
             var words = document.getElementById(random_num);
