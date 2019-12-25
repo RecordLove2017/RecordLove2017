@@ -22,10 +22,13 @@
         <p class="title">CET4 高频单词<br /><a href="http://love.itjoker.cn" class="copyright">Design Copyright By ITJoker ©</a></p>
     </header>
     <main>
-        <div id="main">
+		<div class="ButtonList">
 			<div id="SortButton" class="button"><span>排序</span></div>
 			<div id="ReturnButton" class="button"><span>还原</span></div>
-            <div id="wordlist"></div>
+		</div>
+        <div id="main">
+            <div id="wordlist">
+			</div>
         </div>
     </main>
     <script>
@@ -51,7 +54,7 @@
                     temp = '';
                 }
             }
-            document.getElementById("wordlist").innerHTML = word;
+            document.getElementById("wordlist").innerHTML = document.getElementById("wordlist").innerHTML+word;
             for (var i = 0; i < wordsArray.length; i++) {
                 var temp = document.getElementById(i.toString()).innerHTML;
                 if(temp){
