@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="./words.css" rel="stylesheet">
+    <script src="./http.js"></script>
+    <title>CET4 高频单词</title>
+</head>
+
+<body>
+    <script>
+    </script>
+    <header>
+        <p class="title">CET4 高频单词</p>
+    </header>
+
+    <main>
+        <div id="main">
+            <div id="wordlist"></div>
+        </div>
+
+    </main>
+
+    <script>
+        var num = 0;
+        var paramObj = {
+            httpUrl: '/words.txt',
+            type: 'get',
+        }
+        httpRequest(paramObj, function(response) {
+            var temp = '',
+                word = '';
+            for (var i = 0; i < response.length; i++) {
+                if (response[i] != '\n') {
+                    temp += response[i];
+                } else {
+                    num += 1;
+                    word += '<div id="' + num.toString() + '" class="word">' + temp + '</div>';
+                    temp = '';
+                }
+            }
+            document.getElementById("wordlist").innerHTML = word;
+        }, function() {
+            document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
+        });
+        /*function Event() {
+            var random_num = Math.ceil(Math.random() * num + 1);
+            var words = document.getElementById(random_num);
+            console.log(random_num);
+            words.style.background = '#f00';
+        }
+        setInterval("Event()", 1000);*/
+    </script>
+
+</body>
+
+</html>
