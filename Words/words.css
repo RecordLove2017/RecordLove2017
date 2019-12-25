@@ -1,21 +1,21 @@
 html {
-    height: 80%
+    height: 80%;
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
 }
 
 a:link {
-    color: #fff
+    color: #fff;
 }
 
 a:visited {
-    color: #fff
+    color: #fff;
 }
 
 a:hover {
-    color: #333
+    color: #333;
 }
 
 body {
@@ -92,12 +92,12 @@ header {
     background: #fff;
     border-radius: 5px;
     font-size: 14px;
-    line-height: 1.8
+    line-height: 1.8;
 }
 
 #wordlist {
     float: center;
-    margin-right: 40px
+    margin-right: 40px;
 }
 
 #main {
@@ -106,5 +106,5 @@ header {
     float: center;
     margin: auto;
     min-width: 30%;
-    max-width: 100%
+    max-width: 100%;
 }
