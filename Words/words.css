@@ -42,6 +42,11 @@ header {
     font-size: 12px;
 }
 
+.ButtonList{
+    margin-bottom:25px;
+	padding:15px;
+}
+
 .button {
     margin-left:15px;
     height: 40px;
