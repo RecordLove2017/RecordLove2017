@@ -30,6 +30,9 @@
     </main>
     <script>
         var wordsArray = new Array(693);
+        var Sort_wordsArray_en = new Array(693);
+        var Sort_wordsArray_translate = new Array(693);
+        var Sort_wordsArray = new Array(693);
         var num = 0;
         var paramObj = {
             httpUrl: 'https://love.itjoker.cn/Words/words.txt',
@@ -49,17 +52,13 @@
                 }
             }
             document.getElementById("wordlist").innerHTML = word;
-            var Sort_wordsArray_en = new Array(693);
-            var Sort_wordsArray_translate = new Array(693);
-            var Sort_wordsArray = new Array(693);
             for (var i = 0; i < wordsArray.length; i++) {
                 var temp = document.getElementById(i.toString()).innerHTML;
                 if(temp){
                     Sort_wordsArray_en[i] = temp.split(" ")[0].toString();
                     Sort_wordsArray_translate[i] = temp.split(" ")[2].toString();
-                    //Sort_wordsArray[i] = Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
+                    Sort_wordsArray[i] = Sort_wordsArray_translate[i] + Sort_wordsArray_translate[i];
                 }
-
             }
         }, function () {
             document.getElementById("wordlist").innerHTML = '网络异常! Network ERROR!';
